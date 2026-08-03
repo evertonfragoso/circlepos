@@ -24,4 +24,12 @@ RSpec.describe "#get_isbn13" do
   it "raises when all digits are zero" do
     expect { get_isbn13("000000000000") }.to raise_error
   end
+
+  it "raises an error when isbn prefix has less than 12 digits" do
+    expect { get_isbn13("123456") }.to raise_error
+  end
+
+  it "raises an error when isbn prefix has more than 12 digits" do
+    expect { get_isbn13("1234567890123") }.to raise_error
+  end
 end

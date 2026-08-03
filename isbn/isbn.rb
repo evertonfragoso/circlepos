@@ -4,6 +4,8 @@ def get_isbn13(isbn)
   digits = isbn.to_s.chars.map(&:to_i)
 
   raise if digits.all?(&:zero?)
+  raise if digits.length != 12
+  raise if digits.length > 12
 
   sum = 0
 
