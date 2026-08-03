@@ -16,3 +16,18 @@ def get_isbn13(isbn)
 
   "#{isbn}#{check_digit}"
 end
+
+if __FILE__ == $PROGRAM_NAME
+  loop do
+    print "Enter ISBN prefix (Ctrl+C to exit): "
+
+    isbn = gets.chomp
+
+    puts "ISBN-13: #{get_isbn13(isbn)}"
+  rescue Interrupt
+    puts "\nGoodbye!"
+    exit
+  rescue StandardError => e
+    puts "Error: #{e.message}"
+  end
+end
