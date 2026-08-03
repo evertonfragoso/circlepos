@@ -1,3 +1,3 @@
 # CirclePOS Backend Challenge
 
-1. [Section on code](isbn)
+1. [Section 1 code](isbn)
